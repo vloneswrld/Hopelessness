@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Hopelessness - For Ameer 💖</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+  body {
+    margin: 0;
+    height: 100vh;
+    background: #d8c8cc; /* soft dusty pink-gray */
+    font-family: 'Comfortaa', cursive, sans-serif;
+    color: #5a3a47;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  .container {
+    max-width: 520px;
+    background: rgba(255 255 255 / 0.9);
+    padding: 30px 25px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(90,58,71,0.3);
+    position: relative;
+    z-index: 2;
+  }
+  h1 {
+    margin-bottom: 15px;
+    font-weight: 700;
+    font-size: 2.3rem;
+  }
+  p {
+    font-size: 1.15rem;
+    line-height: 1.5;
+    margin-bottom: 25px;
+  }
+  button {
+    background-color: #8b5867;
+    border: none;
+    color: white;
+    padding: 13px 30px;
+    font-size: 1.1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    user-select: none;
+  }
+  button:hover {
+    background-color: #653947;
+  }
+
+  /* Slow shimmer glow */
+  .hope-glow {
+    margin: 0 auto 20px auto;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: radial-gradient(circle at center, #ffd6d9 40%, transparent 70%);
+    box-shadow: 0 0 25px 10px #ffd6d9;
+    animation: shimmer 6s ease-in-out infinite;
+  }
+  @keyframes shimmer {
+    0%, 100% {
+      opacity: 0.5;
+      transform: scale(1);
+      box-shadow: 0 0 25px 10px #ffd6d9;
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.1);
+      box-shadow: 0 0 40px 18px #ffb6c1;
+    }
+  }
+
+  /* Hope message & emojis */
+  #hopeContainer {
+    margin-top: 20px;
+    font-size: 1.25rem;
+    color: #5a3a47;
+    display: none;
+    user-select: none;
+  }
+  #hopeEmojis {
+    font-size: 2.8rem;
+    margin-top: 12px;
+  }
+</style>
+</head>
+<body>
+
+<div class="container" id="content">
+  <h1>Hii baby,</h1>
+  <div class="hope-glow" aria-hidden="true"></div>
+  <p id="message">
+    Hii baby, I know sometimes the world feels heavy and the future seems so far away, like hope is just out of reach. But even in those moments, I want you to remember you’re not walking this alone. I’m right here holding your hand, believing in you with all my heart. Hope can be small and quiet, but it’s always there — just like my love for you. When you need a little light, click the button and I’ll send you all my hope and strength 🌅💖✨
+  </p>
+  <button id="hopeBtn">A little hope from me</button>
+
+  <div id="hopeContainer" aria-live="polite" role="alert">
+    <div id="hopeMessage">Here’s some light and love for you 🌅💖✨</div>
+  </div>
+</div>
+
+<script>
+  const hopeBtn = document.getElementById('hopeBtn');
+  const hopeContainer = document.getElementById('hopeContainer');
+
+  hopeBtn.addEventListener('click', () => {
+    hopeContainer.style.display = 'block';
+    hopeBtn.disabled = true;
+    hopeBtn.style.cursor = 'default';
+    hopeBtn.style.backgroundColor = '#c48a9e';
+  });
+</script>
+
+</body>
+</html>
